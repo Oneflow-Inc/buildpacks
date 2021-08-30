@@ -23,7 +23,7 @@ inputs:
     description: ""
     required: true
   src:
-    description: "src path to OneFlow, default is pwd"
+    description: "src path to OneFlow, default is current directory"
     required: false
     default: "."
   dry-run:
