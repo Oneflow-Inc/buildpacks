@@ -7,6 +7,9 @@ inputs:
   cmake-init-cache:
     description: "path to CMake initial cache file to build OneFlow"
     required: true
+  conda-env-file:
+    description: ""
+    required: true
   src:
     description: "src path to OneFlow, default is pwd"
     required: false
