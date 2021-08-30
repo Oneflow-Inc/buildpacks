@@ -1,0 +1,19 @@
+name: "Wait"
+description: "Wait a designated number of milliseconds"
+inputs:
+  env:
+    description: "environments to build OneFlow: conda, manylinux"
+    required: true
+  cmake-init-cache:
+    description: "path to CMake initial cache file to build OneFlow"
+    required: true
+  src:
+    description: "src path to OneFlow, default is pwd"
+    required: false
+    default: "."
+outputs:
+  time: # output will be available to future steps
+    description: "The message to output"
+runs:
+  using: "node12"
+  main: "../dist/build.js"
