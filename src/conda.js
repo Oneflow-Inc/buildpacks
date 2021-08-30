@@ -8,18 +8,17 @@ var Exec = require("@actions/exec");
 
 function run(param) {
   console.log("GITHUB_ACTION", Js_dict.get(Process.env, "GITHUB_ACTION"));
+  Exec.exec("cmake", [
+          "..",
+          "-C",
+          Core.getInput("cmake-init-cache")
+        ], {
+          a: 1
+        }).then(function (str) {
+        return Promise.resolve((console.log(str), undefined));
+      });
   
 }
 
-Exec.exec("cmake", [
-        "..",
-        "-C",
-        Core.getInput("cmake-init-cache")
-      ], {
-        a: 1
-      }).then(function (str) {
-      return Promise.resolve((console.log(str), undefined));
-    });
-
 exports.run = run;
-/*  Not a pure module */
+/* process Not a pure module */

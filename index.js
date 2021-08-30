@@ -6,6 +6,7 @@ const conda = require('./src/conda');
 async function run() {
 
     const action = core.getInput('action');
+    console.log(process.env)
     try {
         if (action == "conda") {
             conda.run()
