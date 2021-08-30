@@ -9,7 +9,7 @@ async function run() {
     console.log(process.env)
     try {
         if (action == "conda") {
-            conda.run()
+            await conda.run()
         } else {
             const ms = core.getInput('milliseconds');
             core.info(`Waiting ${ms} milliseconds ...`);
