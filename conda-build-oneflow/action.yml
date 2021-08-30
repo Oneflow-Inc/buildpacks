@@ -31,7 +31,7 @@ inputs:
     required: false
     default: "false"
 outputs:
-  time: # output will be available to future steps
+  pip-index-url:
     description: "The message to output"
 runs:
   using: "node12"
