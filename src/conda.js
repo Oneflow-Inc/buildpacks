@@ -6,7 +6,13 @@ var Process = require("process");
 var Core = require("@actions/core");
 var Exec = require("@actions/exec");
 
+var installerUrlCN = "https://oneflow-static.oss-cn-beijing.aliyuncs.com/downloads/conda-installers/Miniconda3-py39_4.10.3-Linux-x86_64.sh";
+
 function run(param) {
+  var match = Js_dict.get(Process.env, "GITHUB_REPOSITORY");
+  if (match !== undefined) {
+    match === "Oneflow-Inc/buildpacks";
+  }
   console.log("GITHUB_ACTION", Js_dict.get(Process.env, "GITHUB_ACTION"));
   return Exec.exec("cmake", [
                 "..",
@@ -19,5 +25,9 @@ function run(param) {
             });
 }
 
+var installerUrlInternational = "https://repo.anaconda.com/miniconda/Miniconda3-py39_4.10.3-Linux-x86_64.sh";
+
+exports.installerUrlCN = installerUrlCN;
+exports.installerUrlInternational = installerUrlInternational;
 exports.run = run;
 /* process Not a pure module */
