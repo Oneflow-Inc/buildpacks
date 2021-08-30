@@ -30,9 +30,13 @@ inputs:
     description: ""
     required: false
     default: "false"
+  action:
+    description: "internal, current action name"
+    required: false
+    default: "conda"
 outputs:
   pip-index-url:
     description: "pip index url could be use to install oneflow"
 runs:
   using: "node12"
-  main: "../src/conda.bs.js"
+  main: "dist/index.js"
