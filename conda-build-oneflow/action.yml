@@ -32,7 +32,7 @@ inputs:
     default: "false"
 outputs:
   pip-index-url:
-    description: "The message to output"
+    description: "pip index url could be use to install oneflow"
 runs:
   using: "node12"
   main: "../dist/build.js"
